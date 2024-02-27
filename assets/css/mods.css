@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
+body {
+    font-family: 'Hubballi';
+    background-color: rgb(92, 88, 88);
+    color: rgb(252, 252, 252);
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    margin: 100px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    -webkit-animation: rotate 2.0s infinite linear;
+    animation: rotate 2.0s infinite linear;
+}
+
+.test1,
+.test2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #333;
+    border-radius: 100%;
+    -webkit-animation: bounce 2.0s infinite ease-in-out;
+    animation: bounce 2.0s infinite ease-in-out;
+}
+
+.test2 {
+    top: auto;
+    bottom: 0px;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.mm {
+    display: flex;
+    flex-direction: row;
+}
+
+.mm_pic {
+    height: 100px;
+    width: 100px;
+    background: rgba(153, 58, 58, 0.063);
+    border-radius: 100px;
+    border-color: rgb(0, 123, 255);
+}
+
+.huy {
+    font-size: 22px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.module-card {
+    border: 1px solid rgb(204, 204, 204);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 18px;
+    border-color: rgb(0, 123, 255);
+}
+
+.module-card h2 {
+    margin-top: 0;
+}
+
+.module-button {
+    font-family: 'Hubballi', sans-serif;
+    background-color: rgb(0, 123, 255);
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.module-button:active {
+    background-color: rgb(97, 92, 92);
+}
+
+.module-button:hover {
+    background-color: #494ce9;
+}
+
+.copy-button {
+    font-family: 'Hubballi';
+    font-size: 16px;
+    background-color: rgb(0, 123, 255);
+    border: rgb(0, 123, 255);
+    border-radius: 18px;
+    border-color: rgb(0, 123, 255);
+    padding: 7px 14px;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background-color: #494ce9;
+}
+
+.copy-notification {
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 123, 255);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.copy-notification.show {
+    opacity: 1;
+    display: block;
+}
+
+.module-info {
+    font-family: 'Hubballi', sans-serif;
+    font-size: 14px;
+    overflow: auto;
+    border: 1px solid rgb(204, 204, 204);
+    border-color: rgb(0, 123, 255);
+    background-color: rgb(97, 92, 92);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
