@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ShitModules </>
     </title>
+
     <meta property="og:title" content="Telegram channel => https://t.me/shitmodules">
     <meta property="og:description" content="OK">
+
     <link rel="shortcut icon" href="https://mfiles.alphacoders.com/675/thumb-1920-675472.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="assets/css/mods.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/mods.css">
 </head>
+
 
 <body>
     <div class="loading">
@@ -24,8 +28,8 @@
     <div class="module hidden">
         <header>
             <div class="mm">
-                <img class="mm_pic" src="assets/images/mods.png" alt="ShitModules_Img">
-                <div class="huy">
+                <img class="mm_pic" src="/assets/images/mods.png" alt="ShitModules_Img">
+                <div class="ava_h">
                     <p>• Modules for Hikka UserBot</p>
                     <p>• Telegram: @shitmodules</p>
                 </div>
@@ -77,7 +81,7 @@
                 </div>
             </div>
 
-            <div class="module-card">
+            <!-- <div class="module-card">
                 <h2>CDZ-Searcher</h2>
                 <button class="module-button">About the module</button>
                 <div class="module-info hidden">
@@ -86,7 +90,7 @@
                         onclick="copyText('.dlmod https://raw.githubusercontent.com/kamolgks/Hikkamods/main/CDZ-Searcher.py')">💡Download</button>
                     <div class="copy-notification">Successfully copied</div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="module-card">
                 <h2>Facts</h2>
@@ -110,7 +114,7 @@
                 </div>
             </div>
 
-            <div class="module-card">
+            <!-- <div class="module-card">
                 <h2>GachiGallery</h2>
                 <button class="module-button">About the module</button>
                 <div class="module-info hidden">
@@ -119,7 +123,7 @@
                         onclick="copyText('.dlmod https://raw.githubusercontent.com/kamolgks/Hikkamods/main/GachiGallery.py')">💡Download</button>
                     <div class="copy-notification">Successfully copied</div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="module-card">
                 <h2>GamesForAndroid</h2>
@@ -221,13 +225,64 @@
                     <div class="copy-notification">Successfully copied</div>
                 </div>
             </div>
+
     </div>
     </main>
+
     <footer>
-        <p class="center">© 2023 ShitModules, developed by Kamolgks</p>
+        <p class="center">© 2023-2024 ShitModules, developed by Kamolgks</p>
     </footer>
-    <script src="assets/js/script.js"></script>
-    </div>
+    <script>
+        function showModules() {
+            const loadingContainer = document.querySelector('.loading');
+            const moduleContainer = document.querySelector('.module');
+
+            loadingContainer.style.display = 'none';
+            moduleContainer.style.display = 'block';
+        }
+
+        setTimeout(showModules, 1500);
+
+
+        const moduleButtons = document.querySelectorAll('.module-button');
+        moduleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const moduleInfo = button.nextElementSibling;
+                moduleInfo.classList.toggle('hidden');
+            });
+        });
+
+
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('copy-button')) {
+                var text = event.target.getAttribute('data-copy-text');
+                copyText(text);
+            }
+        });
+
+
+        function copyText(text) {
+            var input = document.createElement('input');
+            input.value = text;
+            document.body.appendChild(input);
+
+            input.select();
+            document.execCommand('copy');
+
+            document.body.removeChild(input);
+
+            var notification = document.querySelector('.copy-notification');
+            notification.classList.add('show');
+
+            setTimeout(function () {
+                notification.classList.remove('show');
+            }, 2000);
+        }
+    </script>
+
+    <!-- <script src="/assets/js/script.js"></script> -->
+    <!-- </div> -->
+
 </body>
 
 </html>

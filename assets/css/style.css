@@ -3,7 +3,6 @@
 :root {
     --back-color: #fff3;
     --text-color: #fff;
-    /* --over-color: #fefefe; */
     --popup-text-color: #000000;
     --border: none;
 }
@@ -48,7 +47,6 @@ body {
     border-radius: 16px;
     backdrop-filter: blur(20px);
     border: 2px solid rgb(115, 6, 155);
-    /*rgb(217, 26, 26)*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -87,10 +85,9 @@ a.link {
     height: 10em;
     border-radius: 5.6em;
     border: 2px solid rgb(115, 6, 155);
-    /*rgb(217, 26, 26)*/
 }
 
-.pizdec {
+.c {
     position: relative;
     display: inline-flex;
     padding: 0.3em;

@@ -4,8 +4,11 @@ body {
     width: 100%;
     min-height: 100%;
     margin: 0;
+    margin-top: 46vb;
+    background: rgb(54, 53, 53); color:#ffffff;
     font-family: "Hubballi";
     font-size: 18px;
+    text-align: center;
 }
 
 .typed-cursor {
@@ -17,6 +20,8 @@ body {
     -webkit-animation: typedjsBlink 0.7s infinite;
     animation: typedjsBlink 0.7s infinite;
 }
+
+/* .h3 { margin-top: 46vh; text-align: center; } */
 
 @keyframes typedjsBlink {
     50% {
