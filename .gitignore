@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+package-lock.json
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build files (if using build tools)
+dist/
+build/
+.env
+.env.local
+
+# Optional: Exclude minified files if they're auto-generated
+# assets/css/main.min.css
+# assets/js/main.min.js
+
+# Ignore local server files
+*.log
+helloworld.exe
+test.html
