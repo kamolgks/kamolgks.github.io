@@ -27,3 +27,5 @@ build/
 *.log
 helloworld.exe
 test.html
+
+file.txt

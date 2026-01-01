@@ -1,1 +1,235 @@
-document.addEventListener("DOMContentLoaded",()=>{let e={en:{name:"English"},ru:{name:"Русский"},uz:{name:"O'zbekcha"}},t=localStorage.getItem("language")||"en",a={},n=document.querySelector(".theme-btn"),l=document.querySelector(".nav-toggle"),r=document.querySelector(".nav-links"),o=document.querySelector(".lang-switch"),s=document.querySelector(".lang-btn"),i=document.querySelector(".lang-dropdown"),c=document.querySelector(".typing-text"),d=()=>{let e=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");g(e)},g=e=>{document.documentElement.setAttribute("data-theme",e),localStorage.setItem("theme",e),n&&(n.querySelector("i").className="dark"===e?"fas fa-moon":"fas fa-sun")};n&&n.addEventListener("click",()=>{let e=document.documentElement.getAttribute("data-theme");g("dark"===e?"light":"dark")}),l&&r&&(l.addEventListener("click",()=>r.classList.toggle("show")),r.addEventListener("click",e=>{e.target.closest("a")&&r.classList.remove("show")}));let u=document.querySelectorAll("section[id]"),h=document.querySelectorAll(".nav-links a"),m=()=>{let e="";u.forEach(t=>{let a=t.offsetTop;window.scrollY>=a-70&&(e=t.getAttribute("id"))}),h.forEach(t=>{t.classList.remove("active"),t.getAttribute("href")===`#${e}`&&t.classList.add("active")})},y=()=>{let e=document.querySelectorAll(".progress");e.forEach(e=>{let t=e.getBoundingClientRect();t.top<window.innerHeight&&t.bottom>=0&&(e.style.width=e.getAttribute("data-width"))})};window.addEventListener("scroll",()=>{m(),y()});let $=async e=>{try{let t=await fetch(`assets/locales/lang_${e}.json`);if(!t.ok)throw Error(`Translation file for ${e} not found.`);a=await t.json()}catch(n){console.error("Error loading translation:",n),a={}}},f=()=>{document.querySelectorAll("[data-lang-key]").forEach(e=>{let t=e.getAttribute("data-lang-key"),n=a[t];n&&(e.textContent=n)}),w()},k=async e=>{e&&e!==t&&(t=e,localStorage.setItem("language",e),await $(e),f(),v(e))},v=e=>{s&&(s.querySelector(".current-lang").textContent=e.toUpperCase())},E=()=>{o&&i&&(i.innerHTML="",Object.keys(e).forEach(t=>{let a=e[t],n=document.createElement("div");n.className="lang-option",n.textContent=a.name,n.addEventListener("click",e=>{e.stopPropagation(),k(t),i.classList.remove("show")}),i.appendChild(n)}),s.addEventListener("click",e=>{e.stopPropagation(),i.classList.toggle("show")}),document.addEventListener("click",()=>{i.classList.remove("show")}),v(t))},L=null,p=(e,t=0,a=0,n=!1)=>{if(!c||0===e.length)return;clearTimeout(L);let l=e[t];n?(c.textContent=l.substring(0,a-1),a--):(c.textContent=l.substring(0,a+1),a++);let r=n?50:150;n||a!==l.length?n&&0===a&&(n=!1,t=(t+1)%e.length,r=500):(n=!0,r=2e3),L=setTimeout(()=>p(e,t,a,n),r)},w=()=>{clearTimeout(L);let e=a["hero.animatedTexts"]||[];c&&(c.textContent="",p(e))},b=async()=>{d(),E(),await $(t),f(),m(),y(),AOS.init({duration:600,offset:100,once:!0,easing:"ease-out-cubic"})};b()});
+document.addEventListener("DOMContentLoaded", () => {
+    const languages = {
+        en: { name: "English" },
+        ru: { name: "Русский" },
+        uz: { name: "O'zbekcha" }
+    };
+
+    let currentLanguage = localStorage.getItem("language") || "en";
+    let translations = {};
+
+    const themeButton = document.querySelector(".theme-btn");
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const langSwitch = document.querySelector(".lang-switch");
+    const langButton = document.querySelector(".lang-btn");
+    const langDropdown = document.querySelector(".lang-dropdown");
+    const typingText = document.querySelector(".typing-text");
+
+    const setTheme = (theme) => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        if (themeButton) {
+            const icon = themeButton.querySelector("i");
+            icon.className = theme === "dark" ? "fas fa-moon" : "fas fa-sun";
+        }
+    };
+
+
+    const initTheme = () => {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const defaultTheme = savedTheme || (prefersDark ? "dark" : "light");
+
+        setTheme(defaultTheme);
+    };
+
+    if (themeButton) {
+        themeButton.addEventListener("click", () => {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            setTheme(currentTheme === "dark" ? "light" : "dark");
+        });
+    }
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+        navLinks.addEventListener("click", (event) => {
+            if (event.target.closest("a")) {
+                navLinks.classList.remove("show");
+            }
+        });
+    }
+
+
+    const sections = document.querySelectorAll("section[id]");
+    const navAnchors = document.querySelectorAll(".nav-links a");
+
+    const updateActiveNav = () => {
+        let currentSection = "";
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - 70) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        navAnchors.forEach((anchor) => {
+            anchor.classList.remove("active");
+            if (anchor.getAttribute("href") === `#${currentSection}`) {
+                anchor.classList.add("active");
+            }
+        });
+    };
+
+
+    const animateProgressBars = () => {
+        const progressBars = document.querySelectorAll(".progress");
+        progressBars.forEach((bar) => {
+            const rect = bar.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+            if (isVisible) {
+                const width = bar.getAttribute("data-width");
+                bar.style.width = width;
+            }
+        });
+    };
+
+
+    window.addEventListener("scroll", () => {
+        updateActiveNav();
+        animateProgressBars();
+    });
+
+
+    const loadTranslations = async (langCode) => {
+        try {
+            const response = await fetch(`/assets/locales/lang_${langCode}.json`);
+            if (!response.ok) {
+                throw new Error(`Translation file for ${langCode} not found.`);
+            }
+            translations = await response.json();
+        } catch (error) {
+            console.error("Error loading translation:", error);
+            translations = {};
+        }
+    };
+
+
+    const applyTranslations = () => {
+        document.querySelectorAll("[data-lang-key]").forEach((element) => {
+            const key = element.getAttribute("data-lang-key");
+            const translation = translations[key];
+            if (translation) {
+                element.textContent = translation;
+            }
+        });
+
+        updateTypingAnimation();
+    };
+
+
+    const changeLanguage = async (langCode) => {
+        if (langCode && langCode !== currentLanguage) {
+            currentLanguage = langCode;
+            localStorage.setItem("language", langCode);
+            await loadTranslations(langCode);
+            applyTranslations();
+            updateLangButton(langCode);
+        }
+    };
+
+
+    const updateLangButton = (langCode) => {
+        if (langButton) {
+            const currentLangSpan = langButton.querySelector(".current-lang");
+            if (currentLangSpan) {
+                currentLangSpan.textContent = langCode.toUpperCase();
+            }
+        }
+    };
+
+
+    const initLanguageSwitcher = () => {
+        if (!langSwitch || !langDropdown) return;
+        langDropdown.innerHTML = "";
+
+        Object.keys(languages).forEach((langCode) => {
+            const language = languages[langCode];
+            const option = document.createElement("div");
+            option.className = "lang-option";
+            option.textContent = language.name;
+            option.addEventListener("click", (event) => {
+                event.stopPropagation();
+                changeLanguage(langCode);
+                langDropdown.classList.remove("show");
+            });
+
+            langDropdown.appendChild(option);
+        });
+
+        if (langButton) {
+            langButton.addEventListener("click", (event) => {
+                event.stopPropagation();
+                langDropdown.classList.toggle("show");
+            });
+        }
+
+        document.addEventListener("click", () => {
+            langDropdown.classList.remove("show");
+        });
+        updateLangButton(currentLanguage);
+    };
+
+
+    let typingTimeout = null;
+    const typeWriter = (texts, textIndex = 0, charIndex = 0, isDeleting = false) => {
+        if (!typingText || texts.length === 0) return;
+        clearTimeout(typingTimeout);
+        const currentText = texts[textIndex];
+        if (isDeleting) {
+            typingText.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingText.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let typingSpeed = isDeleting ? 50 : 150;
+        if (!isDeleting && charIndex === currentText.length) {
+
+            isDeleting = true;
+            typingSpeed = 2000;
+        } else if (isDeleting && charIndex === 0) {
+
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            typingSpeed = 500;
+        }
+        typingTimeout = setTimeout(
+            () => typeWriter(texts, textIndex, charIndex, isDeleting),
+            typingSpeed
+        );
+    };
+
+
+    const updateTypingAnimation = () => {
+        clearTimeout(typingTimeout);
+        const animatedTexts = translations["hero.animatedTexts"] || [];
+        if (typingText) {
+            typingText.textContent = "";
+            typeWriter(animatedTexts);
+        }
+    };
+
+
+    const initApp = async () => {
+        initTheme();
+        initLanguageSwitcher();
+        await loadTranslations(currentLanguage);
+        applyTranslations();
+        updateActiveNav();
+        animateProgressBars();
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 600,
+                offset: 100,
+                once: true,
+                easing: "ease-out-cubic"
+            });
+        }
+    };
+
+    initApp();
+});
