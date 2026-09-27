@@ -1,209 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Kamoliddin Tukhtaboev — full-stack developer in Tashkent. Web applications, APIs and Telegram bots built with Python and JavaScript.">
+  <meta name="theme-color" content="#141716">
+  <title>Kamoliddin Tukhtaboev — Full-stack developer</title>
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem("theme") === "light" ? "light" : "dark" } catch (e) { }</script>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 
-<body>
-    <nav class="nav">
-        <div class="container">
-            <a href="#" class="nav-name">Portfolio</a>
-            <ul class="nav-links">
-                <li>
-                    <a href="#home" class="nav-link">
-                        <i class="fas fa-home"></i> 
-                        <span data-lang-key="nav.home">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#about" class="nav-link">
-                        <i class="fas fa-user"></i> 
-                        <span data-lang-key="nav.about">About</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#skills" class="nav-link">
-                        <i class="fas fa-code"></i> 
-                        <span data-lang-key="nav.skills">Skills</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="nav-controls">
-                <div class="lang-switch">
-                    <button class="lang-btn"><span class="current-lang">EN</span></button>
-                    <div class="lang-dropdown"></div>
-                </div>
-                <div class="theme-switch">
-                    <button class="theme-btn" aria-label="Toggle theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
-                <button class="nav-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
+<body data-page="home">
+  <a class="skip-link" href="#main" data-lang-key="a11y.skip">Skip to content</a>
+  <header class="site-header container">
+    <a class="brand" href="./" aria-label="Kamoliddin — home" data-label-key="a11y.home"><span class="brand-mark"
+        aria-hidden="true">k<span>.</span></span>kamolgks</a>
+    <nav class="nav-links" aria-label="Main navigation" data-label-key="a11y.navigation">
+      <a href="#projects" data-lang-key="nav.projects">Projects</a>
+      <a href="#about" data-lang-key="nav.about">About</a>
+      <a href="#contact" data-lang-key="nav.contact">Contact</a>
     </nav>
-
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-in">
-                <h1 data-lang-key="hero.title">Full Stack Developer</h1>
-                <p class="typing-text"></p>
-                <p class="hero-description" data-aos="fade-up" data-aos-delay="200" data-lang-key="hero.description">
-                    Developer from Uzbekistan, Tashkent. I create web applications from scratch using modern
-                    technologies. My experience includes developing user interfaces, server logic, and databases.
-                </p>
-                <p class="hero-description" data-aos="fade-up" data-aos-delay="300" data-lang-key="hero.f">
-                    I create one-page and multi-page websites with adaptive layout and built-in interactive
-                    elements.
-                </p>
-                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
-                    <a href="javascript://" onclick="location.href='/pr'" class="cta-button primary" data-lang-key="hero.viewProjects">View My Projects</a>
-                    <a href="https://t.me/kamolgks" class="cta-button primary" data-lang-key="hero.contact">Contact Me</a>
-                </div>
-            </div>
-        </div>
+    <div class="nav-controls">
+      <label class="language-control"><span class="sr-only" data-lang-key="a11y.language">Language</span><select
+          id="language" aria-label="Language" data-label-key="a11y.language">
+          <option value="en">EN</option>
+          <option value="ru">RU</option>
+          <option value="uz">UZ</option>
+        </select></label>
+      <span class="control-divider" aria-hidden="true"></span>
+      <button class="theme-button" type="button" aria-label="Switch to light theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" />
+          <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20 14a8.5 8.5 0 0 1-10-10A8.5 8.5 0 1 0 20 14Z" stroke="currentColor" stroke-width="1.5"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </header>
+  <p class="language-error container" role="status" hidden></p>
+  <main id="main" class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-eyebrow"><span class="eyebrow">KAMOLIDDIN TUKHTABOEV</span><span class="location"><span
+            class="status-dot" aria-hidden="true"></span><span data-lang-key="hero.location">Tashkent,
+            Uzbekistan</span></span></div>
+      <h1 id="hero-title"><span data-lang-key="hero.title">Full-stack developer.</span><span class="accent-text"
+          data-lang-key="hero.subtitle">Backend at heart.</span></h1>
+      <div class="hero-bottom">
+        <p class="hero-description" data-lang-key="hero.description">I build web applications, APIs and Telegram bots.
+          Thoughtful interfaces, reliable logic, and the details that bring it all together.</p>
+        <div class="hero-actions"><a href="#projects" class="button primary"><span
+              data-lang-key="hero.viewProjects">Explore projects</span> →</a><a href="https://t.me/kamolgks"
+            target="_blank" rel="noopener noreferrer" class="text-link"><span data-lang-key="hero.contact">Get in
+              touch</span> ↗</a></div>
+      </div>
+      <div class="hero-footnote"><span data-lang-key="hero.focus">WEB DEVELOPMENT & AUTOMATION</span><span>PYTHON <span
+            class="separator">/</span> JAVASCRIPT <span class="separator">/</span> SQL</span></div>
     </section>
-
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up" data-lang-key="about.title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image" data-aos="fade-right" data-aos-delay="200">
-                    <img src="https://placehold.co/600x600/111/00ff9b?text=K" alt="Kamolgks Portrait" loading="lazy">
-                </div>
-                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
-                    <p data-lang-key="about.description">
-                        Hi, I'm Kamoliddin Tukhtaboev, a beginner fullstack developer. Building scalable backend systems and efficient server-side architectures. I focus on developing robust APIs, optimizing performance, and creating reliable infrastructure that powers modern digital products.
-                    </p>
-                    <div class="about-details">
-                        <div class="detail-item" data-aos="fade-up" data-aos-delay="400">
-                            <i class="fas fa-briefcase"></i>
-                            <span data-lang-key="about.experience">4+ Years Experience</span>
-                        </div>
-                        <div class="detail-item" data-aos="fade-up" data-aos-delay="500">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-lang-key="about.projects">6 Public Projects</span>
-                        </div>
-                        <div class="detail-item" data-aos="fade-up" data-aos-delay="600">
-                            <i class="fas fa-users"></i>
-                            <span data-lang-key="about.clients">13 Total Clients</span>
-                        </div>
-                    </div>
-                </div>
+    <section class="section selected-projects" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="section-index">01 /</span> <span data-lang-key="projects.eyebrow">A FEW THINGS
+              I'VE BUILT</span></p>
+          <h2 id="projects-title" data-lang-key="projects.selected">Selected projects</h2>
+        </div><a class="text-link" href="projects/"><span data-lang-key="projects.all">All projects</span><span
+            class="count">07</span> →</a>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-visual "><img src="assets/img/nirvanacinema.png" alt="NirvanaCinema" loading="lazy"><span
+              class="project-number" aria-hidden="true">01</span></div>
+          <div class="project-info">
+            <div class="project-heading">
+              <h3>NirvanaCinema</h3><span class="project-status active" data-lang-key="f.active">Active</span>
             </div>
-        </div>
+            <p data-lang-key="project.nirvana_cinema.info">An online cinema</p>
+            <ul class="project-tech" aria-label="Technologies" data-label-key="a11y.technologies">
+              <li>Python</li>
+              <li>PostgreSQL</li>
+              <li>TMDB API</li>
+            </ul>
+            <div class="project-links"><a href="https://nirvanacinema.vercel.app" target="_blank"
+                rel="noopener noreferrer"><span data-lang-key="link.site">Live site</span> ↗<span class="sr-only"> —
+                  NirvanaCinema</span></a></div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-visual visual-files">
+            <div class="file-art" aria-hidden="true"><span class="file-sheet">.png</span><span
+                class="file-arrow">↗</span><span class="file-sheet file-sheet-back">.webp</span></div><span
+              class="visual-caption" aria-hidden="true">FileMorph / convert with ease</span><span class="project-number"
+              aria-hidden="true">02</span>
+          </div>
+          <div class="project-info">
+            <div class="project-heading">
+              <h3>FileMorph</h3><span class="project-status in-progress" data-lang-key="f.in-progress">In
+                progress</span>
+            </div>
+            <p data-lang-key="project.file-morph.info">A web tool for converting files, built with Python and Flask.</p>
+            <ul class="project-tech" aria-label="Technologies" data-label-key="a11y.technologies">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="project-links"><a href="https://github.com/kamolgks/FileMorph" target="_blank"
+                rel="noopener noreferrer">GitHub ↗<span class="sr-only"> — FileMorph</span></a></div>
+          </div>
+        </article>
+      </div>
     </section>
-
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up" data-lang-key="skills.title">My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3 data-lang-key="skills.frontend">Frontend</h3>
-                    <div class="skill-progress">
-                        <div class="skill-info"><span>HTML & CSS</span><span>90%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%;" data-width="90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="skill-info"><span>JavaScript</span><span>60%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%;" data-width="60%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="skill-info"><span>React</span><span>25%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%;" data-width="25%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-                    <h3 data-lang-key="skills.backend">Backend</h3>
-                    <div class="skill-progress">
-                        <div class="skill-info"><span>Python</span><span>75%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%;" data-width="75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="skill-info"><span>Flask / FastAPI</span><span>85%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%;" data-width="85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="skill-info"><span>Databases (SQL)</span><span>70%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%;" data-width="70%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="skill-info"><span>PostgreSQL</span><span>60%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%;" data-width="60%"></div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
-                    <h3 data-lang-key="skills.tools">Tools & DevOps</h3>
-                    <div class="skill-progress">
-                        <div class="skill-info"><span>Git & GitHub</span><span>85%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%;" data-width="85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="skill-info"><span>Docker</span><span>40%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%;" data-width="40%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="skill-info"><span>CI/CD</span><span>50%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%;" data-width="50%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-progress">
-                        <div class="skill-info"><span>Redis</span><span>75%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 0%;" data-width="75%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="about-intro">
+        <p class="eyebrow"><span class="section-index">02 /</span> <span data-lang-key="about.eyebrow">BEHIND THE
+            CODE</span></p>
+        <h2 id="about-title" data-lang-key="about.title">A little about me.</h2>
+        <p class="about-lead" data-lang-key="about.lead">From the interface to the database.</p>
+        <p data-lang-key="about.description">I'm Kamoliddin, a developer from Tashkent. I work across the web stack,
+          with a particular interest in backend development: clear APIs, well-structured data and reliable applications.
+        </p><a href="https://github.com/kamolgks" target="_blank" rel="noopener noreferrer" class="text-link"><span
+            data-lang-key="about.github">More on GitHub</span> ↗</a>
+      </div>
+      <div class="stack" id="skills">
+        <p class="eyebrow" data-lang-key="skills.title">MY TOOLKIT</p>
+        <div class="stack-row">
+          <h3>Backend</h3>
+          <p>Python · Flask · FastAPI<br>PostgreSQL · SQL · Redis</p>
         </div>
+        <div class="stack-row">
+          <h3>Frontend</h3>
+          <p>HTML & CSS · JavaScript<br>React</p>
+        </div>
+        <div class="stack-row">
+          <h3 data-lang-key="skills.tools">Tools & workflow</h3>
+          <p>Git & GitHub · Docker<br>CI/CD · Aiogram</p>
+        </div>
+      </div>
     </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/kamolgks" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i></a>
-                <a href="https://t.me/kamolgks" target="_blank" aria-label="Telegram">
-                    <i class="fab fa-telegram"></i></a>
-            </div>
-            <p data-lang-key="footer.rights">© 2026 Kamoliddin Tukhtaboev. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- <script src="assets/js/snowfall.js"></script> -->
-    <script src="assets/js/main.js"></script>
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow"><span class="section-index">03 /</span> <span data-lang-key="contact.eyebrow">LET'S
+            TALK</span></p>
+        <h2 id="contact-title" data-lang-key="contact.title">Have something in mind?</h2>
+        <p data-lang-key="contact.description">A project idea, a collaboration, or just a hello — my inbox is open.</p>
+      </div><a href="https://t.me/kamolgks" target="_blank" rel="noopener noreferrer" class="button primary"><span
+          data-lang-key="contact.button">Say hello</span> ↗</a>
+    </section>
+  </main>
+  <footer class="site-footer container">
+    <p>© <span data-year>2026</span> Kamoliddin Tukhtaboev</p>
+    <div><a href="https://github.com/kamolgks" target="_blank" rel="noopener noreferrer">GitHub <span
+          aria-hidden="true">↗</span></a><a href="https://t.me/kamolgks" target="_blank"
+        rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a></div><a href="#main"
+      class="back-top"><span data-lang-key="footer.top">Back to top</span> ↑</a>
+  </footer>
 </body>
 
 </html>

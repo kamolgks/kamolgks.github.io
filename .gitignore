@@ -27,5 +27,5 @@ build/
 *.log
 helloworld.exe
 test.html
-
 file.txt
+/design-lab/

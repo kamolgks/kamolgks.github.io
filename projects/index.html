@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Kamoliddin Tukhtaboev — full-stack developer in Tashkent. Web applications, APIs and Telegram bots built with Python and JavaScript.">
+  <meta name="theme-color" content="#141716">
+  <title>Projects — Kamoliddin Tukhtaboev</title>
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem("theme") === "light" ? "light" : "dark" } catch (e) { }</script>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+
+<body data-page="projects">
+  <a class="skip-link" href="#main" data-lang-key="a11y.skip">Skip to content</a>
+  <header class="site-header container">
+    <a class="brand" href="../" aria-label="Kamoliddin — home" data-label-key="a11y.home"><span class="brand-mark"
+        aria-hidden="true">k<span>.</span></span>kamolgks</a>
+    <nav class="nav-links" aria-label="Main navigation" data-label-key="a11y.navigation">
+      <a href="./" aria-current="page" data-lang-key="nav.projects">Projects</a>
+      <a href="../#about" data-lang-key="nav.about">About</a>
+      <a href="../#contact" data-lang-key="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-controls">
+      <label class="language-control"><span class="sr-only" data-lang-key="a11y.language">Language</span><select
+          id="language" aria-label="Language" data-label-key="a11y.language">
+          <option value="en">EN</option>
+          <option value="ru">RU</option>
+          <option value="uz">UZ</option>
+        </select></label>
+      <span class="control-divider" aria-hidden="true"></span>
+      <button class="theme-button" type="button" aria-label="Switch to light theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" />
+          <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20 14a8.5 8.5 0 0 1-10-10A8.5 8.5 0 1 0 20 14Z" stroke="currentColor" stroke-width="1.5"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </header>
+  <p class="language-error container" role="status" hidden></p>
+  <main id="main" class="container">
+    <section class="archive-header" aria-labelledby="archive-title"><a href="../" class="text-link back-link">← <span
+          data-lang-key="f.back">Back to home</span></a>
+      <p class="eyebrow" data-lang-key="projects.eyebrow">A FEW THINGS I'VE BUILT</p>
+      <h1 id="archive-title" data-lang-key="projects.title">Projects & experiments.</h1>
+      <p data-lang-key="projects.description">Web applications, useful little tools, and bots that make everyday tasks
+        easier.</p>
+      <div class="archive-meta"><span data-lang-key="projects.collection">THE COLLECTION</span><span
+          data-lang-key="projects.count">07 PROJECTS</span></div>
+    </section>
+    <section class="projects-grid archive-grid" aria-labelledby="archive-title">
+      <article class="project-card">
+        <div class="project-visual "><img src="../assets/img/nirvanacinema.png" alt="NirvanaCinema" loading="lazy"><span
+            class="project-number" aria-hidden="true">01</span></div>
+        <div class="project-info">
+          <div class="project-heading">
+            <h2>NirvanaCinema</h2><span class="project-status active" data-lang-key="f.active">Active</span>
+          </div>
+          <p data-lang-key="project.nirvana_cinema.info">An online cinema with a clean interface and an ad-free viewing
+            experience.</p>
+          <ul class="project-tech" aria-label="Technologies" data-label-key="a11y.technologies">
+            <li>Python</li>
+            <li>PostgreSQL</li>
+            <li>TMDB API</li>
+          </ul>
+          <div class="project-links"><a href="https://nirvanacinema.vercel.app" target="_blank"
+              rel="noopener noreferrer"><span data-lang-key="link.site">Live site</span> ↗<span class="sr-only"> —
+                NirvanaCinema</span></a></div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-visual visual-files">
+          <div class="file-art" aria-hidden="true"><span class="file-sheet">.png</span><span
+              class="file-arrow">↗</span><span class="file-sheet file-sheet-back">.webp</span></div><span
+            class="visual-caption" aria-hidden="true">FileMorph / convert with ease</span><span class="project-number"
+            aria-hidden="true">02</span>
+        </div>
+        <div class="project-info">
+          <div class="project-heading">
+            <h2>FileMorph</h2><span class="project-status in-progress" data-lang-key="f.in-progress">In progress</span>
+          </div>
+          <p data-lang-key="project.file-morph.info">A web tool for converting files, built with Python and Flask.</p>
+          <ul class="project-tech" aria-label="Technologies" data-label-key="a11y.technologies">
+            <li>Python</li>
+            <li>Flask</li>
+            <li>JavaScript</li>
+          </ul>
+          <div class="project-links"><a href="https://github.com/kamolgks/FileMorph" target="_blank"
+              rel="noopener noreferrer">GitHub ↗<span class="sr-only"> — FileMorph</span></a></div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-visual "><img src="../assets/img/website.png" alt="Personal Website" loading="lazy"><span
+            class="project-number" aria-hidden="true">03</span></div>
+        <div class="project-info">
+          <div class="project-heading">
+            <h2>Personal Website</h2><span class="project-status active" data-lang-key="f.active">Active</span>
+          </div>
+          <p data-lang-key="project.personal_web.info">My personal corner of the web. Projects, experience and a way to
+            get in touch.</p>
+          <ul class="project-tech" aria-label="Technologies" data-label-key="a11y.technologies">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+          <div class="project-links"><a href="https://github.com/kamolgks/kamolgks.github.io" target="_blank"
+              rel="noopener noreferrer">GitHub ↗<span class="sr-only"> — Personal Website</span></a></div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-visual "><img src="../assets/img/password-gen.jpg" alt="Password Generator"
+            loading="lazy"><span class="project-number" aria-hidden="true">04</span></div>
+        <div class="project-info">
+          <div class="project-heading">
+            <h2>Password Generator</h2><span class="project-status completed"
+              data-lang-key="f.completed">Completed</span>
+          </div>
+          <p data-lang-key="project.pass-gen.info">A Flask application for generating random passwords.</p>
+          <ul class="project-tech" aria-label="Technologies" data-label-key="a11y.technologies">
+            <li>Python</li>
+            <li>Flask</li>
+            <li>JavaScript</li>
+          </ul>
+          <div class="project-links"><a href="https://github.com/kamolgks/Password-Generator" target="_blank"
+              rel="noopener noreferrer">GitHub ↗<span class="sr-only"> — Password Generator</span></a></div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-visual "><img src="../assets/img/gif-finder.jpg" alt="Gif-Finder Bot" loading="lazy"><span
+            class="project-number" aria-hidden="true">05</span></div>
+        <div class="project-info">
+          <div class="project-heading">
+            <h2>Gif-Finder Bot</h2><span class="project-status in-progress" data-lang-key="f.in-progress">In
+              progress</span>
+          </div>
+          <p data-lang-key="project.gif-finder.info">Find and share GIFs right inside Telegram using the Giphy API.</p>
+          <ul class="project-tech" aria-label="Technologies" data-label-key="a11y.technologies">
+            <li>Python</li>
+            <li>Aiogram 3</li>
+            <li>Giphy API</li>
+          </ul>
+          <div class="project-links"><a href="https://t.me/GifFinder_robot" target="_blank"
+              rel="noopener noreferrer">Telegram ↗<span class="sr-only"> — Gif-Finder Bot</span></a></div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-visual "><img src="../assets/img/weather-bot.jpg" alt="Weather Bot" loading="lazy"><span
+            class="project-number" aria-hidden="true">06</span></div>
+        <div class="project-info">
+          <div class="project-heading">
+            <h2>Weather Bot</h2><span class="project-status completed" data-lang-key="f.completed">Completed</span>
+          </div>
+          <p data-lang-key="project.weather-bot.info">Current weather information delivered through a simple Telegram
+            bot.</p>
+          <ul class="project-tech" aria-label="Technologies" data-label-key="a11y.technologies">
+            <li>Python</li>
+            <li>Aiogram 3</li>
+            <li>OpenWeatherMap</li>
+          </ul>
+          <div class="project-links"><a href="https://github.com/kamolgks/Weather-Bot" target="_blank"
+              rel="noopener noreferrer">GitHub ↗<span class="sr-only"> — Weather Bot</span></a><a
+              href="https://t.me/weatherv_robot" target="_blank" rel="noopener noreferrer">Telegram ↗<span
+                class="sr-only"> — Weather Bot</span></a></div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-visual visual-tasks">
+          <div class="task-art" aria-hidden="true"><span>✓</span><span>✓</span><span></span></div><span
+            class="visual-caption" aria-hidden="true">Task Bot / one thing at a time</span><span class="project-number"
+            aria-hidden="true">07</span>
+        </div>
+        <div class="project-info">
+          <div class="project-heading">
+            <h2>Task Bot</h2><span class="project-status completed" data-lang-key="f.completed">Completed</span>
+          </div>
+          <p data-lang-key="project.task-bot.info">A Telegram bot for keeping track of your tasks.</p>
+          <ul class="project-tech" aria-label="Technologies" data-label-key="a11y.technologies">
+            <li>Python</li>
+            <li>Aiogram 3</li>
+          </ul>
+          <div class="project-links"><a href="https://github.com/kamolgks/task-bot" target="_blank"
+              rel="noopener noreferrer">GitHub ↗<span class="sr-only"> — Task Bot</span></a></div>
+        </div>
+      </article>
+    </section>
+    <div class="archive-end"><span data-lang-key="projects.more">More code, experiments and work in progress.</span><a
+        href="https://github.com/kamolgks" target="_blank" rel="noopener noreferrer" class="text-link">GitHub ↗</a>
+    </div>
+  </main>
+  <footer class="site-footer container">
+    <p>© <span data-year>2026</span> Kamoliddin Tukhtaboev</p>
+    <div><a href="https://github.com/kamolgks" target="_blank" rel="noopener noreferrer">GitHub <span
+          aria-hidden="true">↗</span></a><a href="https://t.me/kamolgks" target="_blank"
+        rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a></div><a href="#main"
+      class="back-top"><span data-lang-key="footer.top">Back to top</span> ↑</a>
+  </footer>
+</body>
+
+</html>
